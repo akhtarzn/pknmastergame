@@ -105,7 +105,7 @@ Jika Anda mengalami masalah atau memiliki pertanyaan:
 
 - 🐛 **Bug Reports**: [Issues](https://github.com/akhtarzn/pknmastergame/issues)
 - 💡 **Feature Requests**: [Discussions](https://github.com/akhtarzn/pknmastergame/discussions)
-- 📧 **Email**: support@pknmastergames.com
+- 📧 **Email**: akhtarzn@outlook.com
 - 💬 **Discord**: [Join our community](https://discord.gg/pknmastergame)
 
 ---
