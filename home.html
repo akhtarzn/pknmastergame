@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="pknmaster.png">
+    <title>PKN Master - Platform Pembelajaran Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        accent: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        /* Enhanced Animations */
+        .gradient-bg { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .platform-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .platform-card:hover::before {
+            left: 100%;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-15px) scale(1.05) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .platform-card:active {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            50% { transform: translateY(-15px) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(-1deg); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(99, 102, 241, 0.3);
+                transform: scale(1.02);
+            }
+        }
+        
+        .slide-in-up {
+            animation: slideInUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .fade-in-delayed {
+            animation: fadeInDelayed 1.5s ease-out;
+        }
+        
+        @keyframes fadeInDelayed {
+            0% { opacity: 0; transform: translateY(30px); }
+            60% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bounce-in {
+            animation: bounceIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+            50% { transform: scale(1.1) rotate(5deg); }
+            70% { transform: scale(0.9) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .platform-icon {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        .platform-card:hover .platform-icon {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+        }
+        
+        /* Particle System */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: particleFloat 8s linear infinite;
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) rotate(36deg) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(-10vh) rotate(324deg) scale(1);
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading-dots {
+            display: inline-flex;
+            gap: 4px;
+        }
+        
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: loadingDots 1.4s ease-in-out infinite both;
+        }
+        
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dot:nth-child(3) { animation-delay: 0s; }
+        
+        @keyframes loadingDots {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Platform Detection Indicators */
+        .platform-detected {
+            position: relative;
+        }
+        
+        .platform-detected::after {
+            content: '✓ Terdeteksi';
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            background: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .platform-card {
+                margin-bottom: 1rem;
+            }
+            
+            .platform-card:hover {
+                transform: translateY(-8px) scale(1.02);
+            }
+            
+            .floating {
+                animation-duration: 8s;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .platform-card {
+                border: 2px solid #000;
+            }
+            
+            .gradient-bg {
+                background: linear-gradient(135deg, #000080 0%, #4B0082 100%);
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .platform-card {
+                background: rgba(0, 0, 0, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg relative">
+    <!-- Particle Background -->
+    <div class="particles fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center z-50 transition-opacity duration-1000">
+        <div class="text-center text-white">
+            <img src="pknmaster.png" alt="Loading Icon" class="mx-auto mb-6 floating" style="width:200px; height:120px;" />
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white text-glow">PKN Master</h1>
+            <p class="text-lg opacity-80 mb-8 text-glow">Memuat platform pembelajaran...</p>
+            <div class="loading-dots">
+                <div class="loading-dot text-glow"></div>
+                <div class="loading-dot text-glow"></div>
+                <div class="loading-dot text-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="opacity-0 transition-opacity duration-1000">
+        <!-- Header -->
+        <header class="relative z-10 pt-8 pb-4">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center space-x-4 mb-6 bounce-in">
+                    <div class="floating">
+                        <img src="pknmaster.png" alt="PKN Icon" class="w-[200px] h-[120px]" />
+                    </div>
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white text-glow">PKN Master</h1>
+                        <p class="text-lg sm:text-xl text-white opacity-90 font-medium">Games</p>
+                    </div>
+                </div>
+                <p class="text-lg sm:text-xl lg:text-2xl text-white opacity-90 max-w-3xl mx-auto leading-relaxed slide-in-up font-medium">
+                    Platform pembelajaran Pendidikan Kewarganegaraan yang interaktif dan menyenangkan
+                </p>
+            </div>
+        </header>
+
+        <!-- Platform Selection -->
+        <main class="relative z-10 py-8 sm:py-12 lg:py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-8 sm:mb-12 fade-in-delayed">
+                    <h6 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 text-glow">
+                        Pilih Platform Gaming Anda
+                    </h6>
+                    <p class="text-base sm:text-lg text-white opacity-80 max-w-2xl mx-auto">
+                        Setiap platform dioptimalkan untuk memberikan pengalaman terbaik sesuai perangkat Anda
+                    </p>
+                </div>
+
+                <!-- Platform Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+                    <!-- Mobile Platform -->
+                    <div class="platform-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center cursor-pointer border border-white border-opacity-20 slide-in-up" 
+                         onclick="selectPlatform('mobile')" 
+                         style="animation-delay: 0.2s"
+                         id="mobileCard">
+                        <div class="platform-icon text-5xl sm:text-6xl mb-4 sm:mb-6">📱</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Mobile Gaming</h3>
+                        <div class="text-white opacity-80 space-y-2 sm:space-y-3 text-sm sm:text-base">
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Touch-optimized controls</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Swipe gestures</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Portrait & landscape mode</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Offline capability</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 sm:mt-6 text-xs sm:text-sm text-white opacity-60">
+                            Cocok untuk smartphone & tablet
+                        </div>
+                    </div>
+
+                    <!-- Desktop Platform -->
+                    <div class="platform-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center cursor-pointer border border-white border-opacity-20 slide-in-up pulse-glow" 
+                         onclick="selectPlatform('desktop')" 
+                         style="animation-delay: 0.4s"
+                         id="desktopCard">
+                        <div class="platform-icon text-5xl sm:text-6xl mb-4 sm:mb-6">💻</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Desktop Gaming</h3>
+                        <div class="text-white opacity-80 space-y-2 sm:space-y-3 text-sm sm:text-base">
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Keyboard shortcuts</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Mouse precision</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Large screen experience</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Multi-window support</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 sm:mt-6 text-xs sm:text-sm text-white opacity-60">
+                            Direkomendasikan untuk PC & laptop
+                        </div>
+                        <div class="absolute top-1 left-2 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                            RECOMMENDED
+                        </div>
+                    </div>
+
+                    <!-- Console Platform -->
+                    <div class="platform-card bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center cursor-pointer border border-white border-opacity-20 slide-in-up" 
+                         onclick="selectPlatform('console')" 
+                         style="animation-delay: 0.6s"
+                         id="consoleCard">
+                        <div class="platform-icon text-5xl sm:text-6xl mb-4 sm:mb-6">🎮</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Console Gaming</h3>
+                        <div class="text-white opacity-80 space-y-2 sm:space-y-3 text-sm sm:text-base">
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Xbox & PlayStation support</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>TV-optimized interface</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Couch gaming experience</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span>✓</span>
+                                <span>Controller navigation</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 sm:mt-6 text-xs sm:text-sm text-white opacity-60">
+                            Untuk Xbox, PlayStation & TV gaming
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto-Detection Info -->
+                <div class="text-center mb-8 fade-in-delayed" style="animation-delay: 0.8s">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 sm:p-6 max-w-2xl mx-auto border border-white border-opacity-20">
+                        <div class="flex items-center justify-center space-x-3 mb-3">
+                            <div class="text-2xl">🤖</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-white">Deteksi Otomatis</h3>
+                        </div>
+                        <p class="text-white opacity-80 text-sm sm:text-base" id="detectionInfo">
+                            Mendeteksi perangkat Anda...
+                        </p>
+                        <div class="mt-3 text-xs text-white opacity-60" id="deviceSpecs">
+                            <!-- Device specs will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Start Button -->
+                <div class="text-center fade-in-delayed" style="animation-delay: 1s">
+                    <button onclick="quickStart()" 
+                            class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold hover:from-yellow-500 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-2xl pulse-glow">
+                        <span class="mr-2">🚀</span>
+                        <span>Mulai Sekarang</span>
+                        <span class="ml-2">→</span>
+                    </button>
+                    <p class="text-white opacity-60 text-sm mt-3">
+                        Atau pilih platform di atas untuk pengalaman yang dioptimalkan
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Preview -->
+        <section class="relative z-10 py-8 sm:py-12 lg:py-16 bg-black bg-opacity-20">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 text-glow">
+                        Fitur Unggulan
+                    </h2>
+                    <p class="text-base sm:text-lg text-white opacity-80 max-w-2xl mx-auto">
+                        Pengalaman belajar PKN yang tak terlupakan dengan teknologi terdepan
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center bounce-in" style="animation-delay: 0.2s">
+                        <div class="text-4xl mb-4 floating">🎮</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Gamifikasi</h3>
+                        <p class="text-white opacity-70 text-sm">Belajar sambil bermain dengan sistem poin dan level</p>
+                    </div>
+                    <div class="text-center bounce-in" style="animation-delay: 0.4s">
+                        <div class="text-4xl mb-4 floating">🏆</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Turnamen</h3>
+                        <p class="text-white opacity-70 text-sm">Kompetisi antar siswa se-Indonesia</p>
+                    </div>
+                    <div class="text-center bounce-in" style="animation-delay: 0.6s">
+                        <div class="text-4xl mb-4 floating">📊</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Progress Tracking</h3>
+                        <p class="text-white opacity-70 text-sm">Pantau kemajuan belajar secara real-time</p>
+                    </div>
+                    <div class="text-center bounce-in" style="animation-delay: 0.8s">
+                        <div class="text-4xl mb-4 floating">🎵</div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Audio Interaktif</h3>
+                        <p class="text-white opacity-70 text-sm">Musik latar dan efek suara yang menarik</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative z-10 py-8 bg-black bg-opacity-30">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="text-2xl"><img src="pancasila.png" alt="Target" class="w-6 h-6 mr-2" /></div>
+                    <h3 class="text-xl font-bold text-white">PKN Master</h3>
+                </div>
+                <p class="text-white opacity-70 text-sm mb-4">
+                    © 2025 PKN Master Games. Platform pembelajaran interaktif untuk generasi digital.
+                </p>
+                <div class="flex justify-center space-x-6 text-sm text-white opacity-60">
+                    <a href="#" class="hover:opacity-100 transition-opacity">Tentang</a>
+                    <a href="#" class="hover:opacity-100 transition-opacity">Kontak</a>
+                    <a href="#" class="hover:opacity-100 transition-opacity">Bantuan</a>
+                    <a href="#" class="hover:opacity-100 transition-opacity">Privasi</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Platform Detection and Selection System
+        class PlatformDetector {
+            constructor() {
+                this.detectedPlatform = null;
+                this.deviceInfo = {};
+                this.init();
+            }
+
+            init() {
+                this.detectDevice();
+                this.updateUI();
+                this.createParticles();
+                this.startLoadingSequence();
+            }
+
+            detectDevice() {
+                const userAgent = navigator.userAgent.toLowerCase();
+                const platform = navigator.platform.toLowerCase();
+                const maxTouchPoints = navigator.maxTouchPoints || 0;
+                const screenWidth = window.screen.width;
+                const screenHeight = window.screen.height;
+
+                // Detect device type
+                const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent) || maxTouchPoints > 0;
+                const isTablet = (isMobile && (screenWidth > 768 || screenHeight > 768)) || /ipad/i.test(userAgent);
+                const isDesktop = !isMobile && !isTablet;
+                const hasGamepad = 'getGamepads' in navigator;
+
+                // Detect specific platforms
+                const isIOS = /iphone|ipad|ipod/i.test(userAgent);
+                const isAndroid = /android/i.test(userAgent);
+                const isWindows = /win/i.test(platform);
+                const isMac = /mac/i.test(platform);
+                const isLinux = /linux/i.test(platform);
+
+                // Store device information
+                this.deviceInfo = {
+                    type: isMobile ? (isTablet ? 'tablet' : 'mobile') : 'desktop',
+                    os: isIOS ? 'iOS' : isAndroid ? 'Android' : isWindows ? 'Windows' : isMac ? 'macOS' : isLinux ? 'Linux' : 'Unknown',
+                    screenWidth,
+                    screenHeight,
+                    touchSupport: maxTouchPoints > 0,
+                    gamepadSupport: hasGamepad,
+                    pixelRatio: window.devicePixelRatio || 1
+                };
+
+                // Determine recommended platform
+                if (hasGamepad && this.checkGamepadConnected()) {
+                    this.detectedPlatform = 'console';
+                } else if (isMobile || isTablet) {
+                    this.detectedPlatform = 'mobile';
+                } else {
+                    this.detectedPlatform = 'desktop';
+                }
+            }
+
+            checkGamepadConnected() {
+                if ('getGamepads' in navigator) {
+                    const gamepads = navigator.getGamepads();
+                    for (let i = 0; i < gamepads.length; i++) {
+                        if (gamepads[i] && gamepads[i].connected) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            updateUI() {
+                // Update detection info
+                const detectionInfo = document.getElementById('detectionInfo');
+                const deviceSpecs = document.getElementById('deviceSpecs');
+
+                detectionInfo.textContent = `Perangkat ${this.deviceInfo.type} terdeteksi - ${this.getRecommendationText()}`;
+                
+                deviceSpecs.innerHTML = `
+                    ${this.deviceInfo.os} • ${this.deviceInfo.screenWidth}×${this.deviceInfo.screenHeight} • 
+                    ${this.deviceInfo.touchSupport ? 'Touch' : 'No Touch'} • 
+                    ${this.deviceInfo.gamepadSupport ? 'Gamepad Ready' : 'No Gamepad'}
+                `;
+
+                // Highlight recommended platform
+                this.highlightRecommendedPlatform();
+            }
+
+            getRecommendationText() {
+                switch (this.detectedPlatform) {
+                    case 'mobile':
+                        return 'Mobile Gaming direkomendasikan';
+                    case 'console':
+                        return 'Console Gaming direkomendasikan';
+                    case 'desktop':
+                    default:
+                        return 'Desktop Gaming direkomendasikan';
+                }
+            }
+
+            highlightRecommendedPlatform() {
+                // Remove existing highlights
+                document.querySelectorAll('.platform-card').forEach(card => {
+                    card.classList.remove('platform-detected', 'pulse-glow');
+                });
+
+                // Add highlight to detected platform
+                const platformCard = document.getElementById(this.detectedPlatform + 'Card');
+                if (platformCard) {
+                    platformCard.classList.add('platform-detected', 'pulse-glow');
+                }
+            }
+
+            createParticles() {
+                const particlesContainer = document.querySelector('.particles');
+                
+                // Create initial particles
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => this.createParticle(), i * 200);
+                }
+
+                // Continue creating particles
+                setInterval(() => this.createParticle(), 1000);
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                
+                // Random particle colors
+                const colors = ['rgba(255,255,255,0.8)', 'rgba(99,102,241,0.6)', 'rgba(236,72,153,0.6)', 'rgba(16,185,129,0.6)'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.querySelector('.particles').appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 10000);
+            }
+
+            startLoadingSequence() {
+                // Show loading screen initially
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                        document.getElementById('mainContent').style.opacity = '1';
+                    }, 1000);
+                }, 2000);
+            }
+        }
+
+        // Platform Selection Functions
+        function selectPlatform(platform) {
+            // Add selection animation
+            const selectedCard = document.getElementById(platform + 'Card');
+            selectedCard.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                selectedCard.style.transform = '';
+                
+                // Show loading and redirect
+                showPlatformLoading(platform);
+                
+                setTimeout(() => {
+                    redirectToPlatform(platform);
+                }, 2000);
+            }, 150);
+        }
+
+        function quickStart() {
+            const detector = new PlatformDetector();
+            selectPlatform(detector.detectedPlatform);
+        }
+
+        function showPlatformLoading(platform) {
+            const platformNames = {
+                mobile: 'Mobile Gaming',
+                desktop: 'Desktop Gaming',
+                console: 'Console Gaming'
+            };
+
+            const platformIcons = {
+                mobile: '📱',
+                desktop: '💻',
+                console: '🎮'
+            };
+
+            // Create loading overlay
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center z-50';
+            loadingOverlay.innerHTML = `
+                <div class="text-center text-white">
+                    <div class="text-6xl mb-6 floating">${platformIcons[platform]}</div>
+                    <h2 class="text-3xl font-bold mb-4">Memuat ${platformNames[platform]}</h2>
+                    <p class="text-lg opacity-80 mb-8">Mengoptimalkan pengalaman untuk perangkat Anda...</p>
+                    <div class="loading-dots">
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                    </div>
+                    <div class="mt-6 text-sm opacity-60">
+                        <div id="loadingProgress">Memuat aset game...</div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(loadingOverlay);
+
+            // Simulate loading progress
+            const loadingSteps = [
+                'Memuat aset game...',
+                'Mengoptimalkan interface...',
+                'Menyiapkan audio system...',
+                'Menginisialisasi kontrol...',
+                'Hampir selesai...'
+            ];
+
+            let currentStep = 0;
+            const progressInterval = setInterval(() => {
+                if (currentStep < loadingSteps.length) {
+                    document.getElementById('loadingProgress').textContent = loadingSteps[currentStep];
+                    currentStep++;
+                } else {
+                    clearInterval(progressInterval);
+                }
+            }, 400);
+        }
+
+        function redirectToPlatform(platform) {
+            // Store selected platform in localStorage
+            localStorage.setItem('selectedPlatform', platform);
+            localStorage.setItem('platformOptimized', 'true');
+            
+            // Add platform-specific settings
+            const platformSettings = {
+                mobile: {
+                    touchOptimized: true,
+                    gestureControls: true,
+                    portraitMode: true,
+                    reducedAnimations: false
+                },
+                desktop: {
+                    keyboardShortcuts: true,
+                    mouseOptimized: true,
+                    fullAnimations: true,
+                    multiWindow: true
+                },
+                console: {
+                    controllerSupport: true,
+                    tvOptimized: true,
+                    consoleUI: true,
+                    largeText: true
+                }
+            };
+
+            localStorage.setItem('platformSettings', JSON.stringify(platformSettings[platform]));
+
+            // Redirect to main game
+            // window.location.href = 'game.html';
+            switch (platform) {
+                case 'mobile':
+                    window.location.href = 'game-mobile.html';
+                    break;
+                case 'desktop':
+                    window.location.href = 'game-desktop.html';
+                    break;
+                case 'console':
+                    window.location.href = 'game-console.html';
+                    break;
+                default:
+                    window.location.href = 'game-mobile.html'; // fallback
+                break;
+            }
+        }
+
+        // Gamepad Detection
+        function detectGamepads() {
+            if ('getGamepads' in navigator) {
+                window.addEventListener('gamepadconnected', (e) => {
+                    console.log('Gamepad connected:', e.gamepad);
+                    
+                    // Update UI to show console gaming is available
+                    const consoleCard = document.getElementById('consoleCard');
+                    if (consoleCard && !consoleCard.classList.contains('platform-detected')) {
+                        consoleCard.classList.add('platform-detected', 'pulse-glow');
+                        
+                        // Show notification
+                        showNotification('🎮 Controller terdeteksi! Console Gaming tersedia.', 'success');
+                    }
+                });
+
+                window.addEventListener('gamepaddisconnected', (e) => {
+                    console.log('Gamepad disconnected:', e.gamepad);
+                });
+            }
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-xl text-white font-medium shadow-lg transform translate-x-full transition-transform duration-300`;
+            
+            const bgColors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                info: 'bg-blue-500',
+                warning: 'bg-yellow-500'
+            };
+            
+            notification.classList.add(bgColors[type] || bgColors.info);
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Slide in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Slide out and remove
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 4000);
+        }
+
+        // Keyboard Navigation
+        function setupKeyboardNavigation() {
+            let currentPlatform = 0;
+            const platforms = ['mobile', 'desktop', 'console'];
+            
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        currentPlatform = Math.max(0, currentPlatform - 1);
+                        highlightPlatform(platforms[currentPlatform]);
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        currentPlatform = Math.min(platforms.length - 1, currentPlatform + 1);
+                        highlightPlatform(platforms[currentPlatform]);
+                        break;
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        selectPlatform(platforms[currentPlatform]);
+                        break;
+                    case 'Escape':
+                        e.preventDefault();
+                        quickStart();
+                        break;
+                }
+            });
+        }
+
+        function highlightPlatform(platform) {
+            // Remove existing highlights
+            document.querySelectorAll('.platform-card').forEach(card => {
+                card.style.outline = 'none';
+            });
+            
+            // Add highlight to selected platform
+            const platformCard = document.getElementById(platform + 'Card');
+            if (platformCard) {
+                platformCard.style.outline = '3px solid #fbbf24';
+                platformCard.style.outlineOffset = '4px';
+                platformCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const detector = new PlatformDetector();
+            detectGamepads();
+            setupKeyboardNavigation();
+            
+            // Add click sound effect
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.platform-card') || e.target.closest('button')) {
+                    // Simple click sound using Web Audio API
+                    if ('AudioContext' in window || 'webkitAudioContext' in window) {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                        
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + 0.1);
+                    }
+                }
+            });
+
+            // Performance monitoring
+            if ('performance' in window) {
+                window.addEventListener('load', () => {
+                    const loadTime = performance.now();
+                    console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+                    
+                    if (loadTime > 3000) {
+                        showNotification('⚠️ Koneksi lambat terdeteksi. Memilih mode optimized.', 'warning');
+                    }
+                });
+            }
+        });
+
+        // Service Worker Registration for PWA support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97b2cac784e544c3',t:'MTc1NzIxMjMxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
