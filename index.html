@@ -1667,134 +1667,974 @@
         // Question Bank
         const questionBank = {
             pancasila: [
-                {
-                    question: "Apa bunyi sila pertama Pancasila?",
-                    options: ["Ketuhanan Yang Maha Esa", "Kemanusiaan yang Adil dan Beradab", "Persatuan Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan"],
-                    correct: 0,
+                { 
+                    question: "Apa bunyi sila pertama Pancasila?", 
+                    options: ["Ketuhanan Yang Maha Esa", "Kemanusiaan yang Adil dan Beradab", "Persatuan Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan"], 
+                    correct: 0, 
                     explanation: "Sila pertama Pancasila adalah 'Ketuhanan Yang Maha Esa' yang mengakui adanya Tuhan dan kebebasan beragama."
                 },
-                {
-                    question: "Lambang sila kedua Pancasila adalah?",
-                    options: ["Bintang", "Rantai", "Pohon Beringin", "Kepala Banteng"],
-                    correct: 1,
+                { 
+                    question: "Lambang sila kedua Pancasila adalah?", 
+                    options: ["Bintang", "Rantai", "Pohon Beringin", "Kepala Banteng"], 
+                    correct: 1, 
                     explanation: "Rantai melambangkan sila kedua 'Kemanusiaan yang Adil dan Beradab'."
                 },
-                {
-                    question: "Nilai-nilai Pancasila yang tercermin dalam kehidupan sehari-hari disebut?",
-                    options: ["Ideologi", "Implementasi", "Pengamalan", "Sosialisasi"],
-                    correct: 2,
+                { 
+                    question: "Nilai-nilai Pancasila yang tercermin dalam kehidupan sehari-hari disebut?", 
+                    options: ["Ideologi", "Implementasi", "Pengamalan", "Sosialisasi"], 
+                    correct: 2, 
                     explanation: "Pengamalan Pancasila adalah penerapan nilai-nilai Pancasila dalam kehidupan sehari-hari."
                 },
-                {
-                    question: "Lambang sila ketiga Pancasila adalah?",
-                    options: ["Pohon Beringin", "Rantai", "Bintang", "Padi dan Kapas"],
-                    correct: 0,
+                { 
+                    question: "Lambang sila ketiga Pancasila adalah?", 
+                    options: ["Pohon Beringin", "Rantai", "Bintang", "Padi dan Kapas"], 
+                    correct: 0, 
                     explanation: "Pohon Beringin melambangkan sila ketiga 'Persatuan Indonesia'."
                 },
-                {
-                    question: "Sila keempat Pancasila berbunyi?",
-                    options: ["Persatuan Indonesia", "Keadilan Sosial bagi Seluruh Rakyat Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan", "Ketuhanan Yang Maha Esa"],
-                    correct: 2,
-                    explanation: "Sila keempat adalah 'Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan'."
+                { 
+                    question: 'Sila ke-1 Pancasila adalah...', 
+                    options: ['Ketuhanan Yang Maha Esa', 'Kemanusiaan yang Adil dan Beradab', 'Persatuan Indonesia', 'Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan'], 
+                    correct: 0, 
+                    explanation: "Sila pertama berbunyi 'Ketuhanan Yang Maha Esa'."
+                },
+                { 
+                    question: 'Pancasila berasal dari bahasa...', 
+                    options: ['Sansekerta', 'Latin', 'Yunani', 'Arab'], 
+                    correct: 0, 
+                    explanation: "Pancasila berasal dari bahasa Sansekerta: 'panca' berarti lima dan 'sila' berarti dasar/prinsip."
+                },
+                { 
+                    question: 'Pancasila sebagai dasar negara berarti...', 
+                    options: ['Sumber dari segala sumber hukum', 'Dasar ideologi bangsa', 'Dasar falsafah negara', 'Dasar moralitas bangsa'], 
+                    correct: 0, 
+                    explanation: "Sebagai dasar negara, Pancasila menjadi sumber dari segala sumber hukum di Indonesia."
+                },
+                { 
+                    question: 'Bunga Nasional Indonesia adalah...', 
+                    options: ['Melati, Anggrek, Rafflesia Arnoldi', 'Mawar, Tulip, Sakura', 'Kamboja, Teratai, Matahari', 'Lili, Kaktus, Kembang Sepatu'], 
+                    correct: 0, 
+                    explanation: "Bunga nasional Indonesia adalah Melati (puspa bangsa), Anggrek Bulan (puspa pesona), dan Rafflesia Arnoldi (puspa langka)."
+                },
+                { 
+                    question: 'Sila kedua Pancasila dilambangkan dengan...', 
+                    options: ['Rantai', 'Banteng', 'Padi dan Kapas', 'Pohon Beringin'], 
+                    correct: 0, 
+                    explanation: "Rantai melambangkan sila kedua yaitu 'Kemanusiaan yang Adil dan Beradab'."
+                },
+                { 
+                    question: 'Sila ketiga Pancasila dilambangkan dengan...', 
+                    options: ['Pohon Beringin', 'Rantai', 'Bintang', 'Padi dan Kapas'], 
+                    correct: 0, 
+                    explanation: "Pohon Beringin melambangkan sila ketiga yaitu 'Persatuan Indonesia'."
+                },
+                { 
+                    question: 'Sila keempat Pancasila dilambangkan dengan...', 
+                    options: ['Kepala Banteng', 'Pohon Beringin', 'Bintang', 'Padi dan Kapas'], 
+                    correct: 0, 
+                    explanation: "Kepala Banteng melambangkan sila keempat yaitu 'Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan'."
+                },
+                { 
+                    question: 'Sila kelima Pancasila dilambangkan dengan...', 
+                    options: ['Padi dan Kapas', 'Kepala Banteng', 'Bintang', 'Rantai'], 
+                    correct: 0, 
+                    explanation: "Padi dan Kapas melambangkan sila kelima yaitu 'Keadilan Sosial bagi Seluruh Rakyat Indonesia'."
+                },
+                { 
+                    question: 'Pancasila disahkan sebagai dasar negara pada...', 
+                    options: ['Sidang PPKI 18 Agustus 1945', 'Sidang BPUPKI 1 Juni 1945', 'Sidang PPKI 17 Agustus 1945', 'Sidang BPUPKI 18 Agustus 1945'], 
+                    correct: 0, 
+                    explanation: "Pancasila disahkan sebagai dasar negara dalam sidang PPKI tanggal 18 Agustus 1945."
+                },
+                { 
+                    question: 'Pancasila sebagai ideologi terbuka berarti...', 
+                    options: ['Mampu menyesuaikan diri dengan perkembangan zaman', 'Tidak bisa diubah', 'Sangat kaku', 'Hanya untuk satu golongan'], 
+                    correct: 0, 
+                    explanation: "Pancasila sebagai ideologi terbuka berarti mampu menyesuaikan diri dengan perkembangan zaman."
+                },
+                { 
+                    question: 'Tujuan nasional bangsa Indonesia adalah...', 
+                    options: ['Melindungi segenap bangsa', 'Menjajah negara lain', 'Memperluas wilayah', 'Menjadi negara adikuasa'], 
+                    correct: 0, 
+                    explanation: "Tujuan nasional bangsa Indonesia adalah melindungi segenap bangsa dan seluruh tumpah darah Indonesia."
+                },
+                { 
+                    question: 'Fungsi pokok Pancasila sebagai pandangan hidup bangsa adalah...', 
+                    options: ['Memberi arah dan tujuan bagi bangsa', 'Sebagai alat politik', 'Sebagai alat kekuasaan', 'Sebagai dasar ekonomi'], 
+                    correct: 0, 
+                    explanation: "Fungsi pokok Pancasila sebagai pandangan hidup adalah memberi arah dan tujuan bagi bangsa."
+                },
+                { 
+                    question: 'Sikap yang sesuai dengan Sila Persatuan Indonesia adalah...', 
+                    options: ['Gotong royong membersihkan kelas', 'Saling bermusuhan', 'Membeda-bedakan teman', 'Mementingkan diri sendiri'], 
+                    correct: 0, 
+                    explanation: "Gotong royong membersihkan kelas mencerminkan semangat persatuan sesuai sila ketiga."
+                },
+                { 
+                    question: 'Penerapan nilai Sila Kerakyatan di lingkungan sekolah adalah...', 
+                    options: ['Musyawarah pemilihan ketua OSIS', 'Berlaku curang saat ulangan', 'Menyombongkan diri', 'Tidak menghormati guru'], 
+                    correct: 0, 
+                    explanation: "Musyawarah pemilihan ketua OSIS mencerminkan penerapan sila keempat tentang kerakyatan."
+                },
+                { 
+                    question: 'Tugu Proklamasi berada di...', 
+                    options: ['Jakarta', 'Bandung', 'Yogyakarta', 'Semarang'], 
+                    correct: 0, 
+                    explanation: "Tugu Proklamasi berada di Jakarta, tempat dibacakannya Proklamasi Kemerdekaan."
+                },
+                { 
+                    question: 'Pancasila disahkan pada tanggal...', 
+                    options: ['18 Agustus 1945', '17 Agustus 1945', '1 Juni 1945', '28 Oktober 1928'], 
+                    correct: 0, 
+                    explanation: "Pancasila disahkan pada tanggal 18 Agustus 1945, sehari setelah Proklamasi Kemerdekaan."
+                },
+                { 
+                    question: 'Pancasila sebagai ideologi terbuka artinya...', 
+                    options: ['Mampu menerima pengaruh dari luar', 'Tidak bisa diubah', 'Sangat kaku', 'Hanya untuk satu golongan'], 
+                    correct: 0, 
+                    explanation: "Artinya Pancasila mampu menerima pengaruh dari luar tanpa kehilangan jati dirinya."
+                },
+                { 
+                    question: 'Pancasila sebagai dasar negara berfungsi...', 
+                    options: ['Sebagai pedoman dalam kehidupan berbangsa dan bernegara', 'Sebagai alat politik', 'Sebagai alat kekuasaan', 'Sebagai dasar hukum'], 
+                    correct: 0, 
+                    explanation: "Pancasila sebagai dasar negara berfungsi sebagai pedoman dalam kehidupan berbangsa dan bernegara."
+                },
+                { 
+                    question: 'Lembaga yang mengesahkan Pancasila adalah...', 
+                    options: ['PPKI', 'BPUPKI', 'DPR', 'MPR'], 
+                    correct: 0, 
+                    explanation: "Pancasila disahkan oleh PPKI (Panitia Persiapan Kemerdekaan Indonesia)."
+                },
+                { 
+                    question: 'Tokoh yang mengusulkan Pancasila sebagai dasar negara adalah...', 
+                    options: ['Soekarno', 'Mohammad Hatta', 'Soepomo', 'Mohammad Yamin'], 
+                    correct: 0, 
+                    explanation: "Soekarno mengusulkan Pancasila sebagai dasar negara pada 1 Juni 1945."
+                },
+                { 
+                    question: 'Contoh pengamalan sila ke-5 Pancasila adalah...', 
+                    options: ['Bersikap adil kepada sesama', 'Menghormati orang lain', 'Gotong royong', 'Musyawarah'], 
+                    correct: 0, 
+                    explanation: "Sila ke-5 berbunyi 'Keadilan Sosial bagi Seluruh Rakyat Indonesia', salah satunya diwujudkan dengan bersikap adil kepada sesama."
+                },
+                { 
+                    question: 'Pancasila sebagai sumber nilai dan pedoman hidup berarti...', 
+                    options: ['Pancasila menjadi acuan dalam kehidupan berbangsa dan bernegara', 'Pancasila sebagai alat politik', 'Pancasila sebagai alat kekuasaan', 'Pancasila sebagai dasar hukum'], 
+                    correct: 0, 
+                    explanation: "Artinya Pancasila menjadi acuan dan pedoman hidup bagi bangsa Indonesia."
+                },
+                { 
+                    question: 'Lagu "Garuda Pancasila" diciptakan oleh...', 
+                    options: ['Sudharnoto', 'Ismail Marzuki', 'Wage Rudolf Supratman', 'Cornel Simanjuntak'], 
+                    correct: 0, 
+                    explanation: "Lagu 'Garuda Pancasila' diciptakan oleh Sudharnoto."
+                },
+                { 
+                    question: "Sila keempat Pancasila berbunyi?", 
+                    options: ["Persatuan Indonesia", "Keadilan Sosial bagi Seluruh Rakyat Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan", "Ketuhanan Yang Maha Esa"], 
+                    correct: 2, 
+                    explanation: "Sila keempat berbunyi 'Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan'."
                 }
             ],
             konstitusi: [
-                {
-                    question: "UUD 1945 disahkan pada tanggal?",
-                    options: ["17 Agustus 1945", "18 Agustus 1945", "19 Agustus 1945", "20 Agustus 1945"],
-                    correct: 1,
+                { 
+                    question: "UUD 1945 disahkan pada tanggal?", 
+                    options: ["17 Agustus 1945", "18 Agustus 1945", "19 Agustus 1945", "20 Agustus 1945"], 
+                    correct: 1, 
                     explanation: "UUD 1945 disahkan oleh PPKI pada tanggal 18 Agustus 1945."
                 },
-                {
-                    question: "Berapa kali UUD 1945 mengalami amandemen?",
-                    options: ["3 kali", "4 kali", "5 kali", "6 kali"],
-                    correct: 1,
-                    explanation: "UUD 1945 mengalami 4 kali amandemen dari tahun 1999-2002."
+                { 
+                    question: "Berapa kali UUD 1945 mengalami amandemen?", 
+                    options: ["3 kali", "4 kali", "5 kali", "6 kali"], 
+                    correct: 1, 
+                    explanation: "UUD 1945 mengalami 4 kali amandemen pada periode 1999–2002."
                 },
-                {
-                    question: "Pasal berapa yang mengatur tentang HAM dalam UUD 1945?",
-                    options: ["Pasal 27-34", "Pasal 28A-28J", "Pasal 30-37", "Pasal 25-32"],
-                    correct: 1,
-                    explanation: "HAM diatur dalam Pasal 28A sampai 28J UUD 1945."
+                { 
+                    question: 'Pasal 33 UUD 1945 mengatur tentang...', 
+                    options: ['Perekonomian nasional', 'Pendidikan', 'HAM', 'Sistem pemerintahan'], 
+                    correct: 0, 
+                    explanation: "Pasal 33 mengatur perekonomian nasional yang disusun sebagai usaha bersama berdasarkan asas kekeluargaan."
+                },
+                { 
+                    question: 'Makna dari amandemen UUD 1945 adalah...', 
+                    options: ['Penghapusan', 'Penambahan', 'Perubahan', 'Pembatalan'], 
+                    correct: 2, 
+                    explanation: "Amandemen berarti perubahan isi UUD 1945 agar sesuai dengan perkembangan zaman dan kebutuhan bangsa."
+                },
+                { 
+                    question: 'Hak untuk mendapatkan pendidikan diatur dalam UUD 1945 pasal...', 
+                    options: ['Pasal 27', 'Pasal 28', 'Pasal 29', 'Pasal 31'], 
+                    correct: 3, 
+                    explanation: "Hak atas pendidikan diatur dalam Pasal 31 UUD 1945."
+                },
+                { 
+                    question: 'Siapa yang disebut sebagai Bapak Konstitusi Indonesia?', 
+                    options: ['Soepomo', 'Mohammad Hatta', 'Soekarno', 'Sutan Syahrir'], 
+                    correct: 0, 
+                    explanation: "Soepomo dikenal sebagai Bapak Konstitusi Indonesia karena perannya dalam perumusan UUD 1945."
+                },
+                { 
+                    question: 'Jumlah amandemen UUD 1945 yang sah adalah...', 
+                    options: ['3 kali', '5 kali', 'Tidak ada', '4 kali'], 
+                    correct: 3, 
+                    explanation: "Jumlah amandemen UUD 1945 yang sah adalah 4 kali, dari tahun 1999 hingga 2002."
+                },
+                { 
+                    question: 'Sistematika UUD 1945 sebelum amandemen terdiri dari...', 
+                    options: ['Pembukaan, Bab, Pasal', 'Pembukaan, Pasal, Aturan', 'Pembukaan, Batang Tubuh, Penjelasan', 'Pembukaan, Pasal, Ayat'], 
+                    correct: 2, 
+                    explanation: "Sebelum amandemen, sistematika UUD 1945 terdiri dari Pembukaan, Batang Tubuh, dan Penjelasan."
+                },
+                { 
+                    question: 'Siapa yang memimpin sidang PPKI pertama?', 
+                    options: ['Mohammad Hatta', 'Soekarno', 'Ahmad Soebardjo', 'Soepomo'], 
+                    correct: 1, 
+                    explanation: "Sidang PPKI pertama dipimpin oleh Soekarno sebagai ketua PPKI."
+                },
+                { 
+                    question: 'Dalam UUD 1945, kekuasaan eksekutif dipegang oleh...', 
+                    options: ['Presiden', 'DPR', 'MPR', 'Mahkamah Agung'], 
+                    correct: 0, 
+                    explanation: "Kekuasaan eksekutif menurut UUD 1945 dipegang oleh Presiden."
+                },
+                { 
+                    question: 'Majelis Permusyawaratan Rakyat (MPR) terdiri dari...', 
+                    options: ['DPR dan Presiden', 'DPR dan BPK', 'DPR dan Mahkamah Konstitusi', 'DPR dan DPD'], 
+                    correct: 3, 
+                    explanation: "MPR terdiri dari anggota DPR dan anggota DPD."
+                },
+                { 
+                    question: 'Dalam keadaan darurat, Presiden dapat mengeluarkan...', 
+                    options: ['Peraturan Presiden', 'Keputusan Presiden', 'Peraturan Pemerintah Pengganti Undang-Undang', 'Instruksi Presiden'], 
+                    correct: 2, 
+                    explanation: "Dalam keadaan darurat, Presiden dapat mengeluarkan Peraturan Pemerintah Pengganti Undang-Undang (Perppu)."
+                },
+                { 
+                    question: 'Lembaga negara yang memiliki hak untuk mengajukan rancangan undang-undang adalah...', 
+                    options: ['DPR', 'Presiden', 'DPD', 'Mahkamah Konstitusi'], 
+                    correct: 0, 
+                    explanation: "DPR memiliki hak untuk mengajukan rancangan undang-undang."
+                },
+                { 
+                    question: 'Pembukaan UUD 1945 terdiri dari berapa alinea?', 
+                    options: ['3 alinea', '4 alinea', '5 alinea', '6 alinea'], 
+                    correct: 1, 
+                    explanation: "Pembukaan UUD 1945 terdiri dari 4 alinea."
+                },
+                { 
+                    question: 'Amandemen UUD 1945 dilakukan sebanyak...', 
+                    options: ['3 kali', '2 kali', '4 kali', '1 kali'], 
+                    correct: 2, 
+                    explanation: "UUD 1945 telah diamandemen sebanyak 4 kali."
+                },
+                { 
+                    question: 'Negara Indonesia adalah negara hukum, tercantum dalam UUD 1945 pasal...', 
+                    options: ['Pasal 2 ayat 1', 'Pasal 3 ayat 1', 'Pasal 4 ayat 1', 'Pasal 1 ayat 3'], 
+                    correct: 3, 
+                    explanation: "Pasal 1 ayat 3 UUD 1945 menyatakan bahwa Negara Indonesia adalah negara hukum."
+                },
+                { 
+                    question: 'Lembaga eksekutif di Indonesia adalah...', 
+                    options: ['Presiden dan Wakil Presiden', 'DPR dan MPR', 'Mahkamah Agung dan Mahkamah Konstitusi', 'Komisi Yudisial'], 
+                    correct: 0, 
+                    explanation: "Lembaga eksekutif di Indonesia adalah Presiden dan Wakil Presiden."
+                },
+                { 
+                    question: 'Lembaga legislatif di Indonesia adalah...', 
+                    options: ['Presiden dan Wakil Presiden', 'Mahkamah Agung', 'MPR, DPR, DPD', 'Komisi Yudisial'], 
+                    correct: 2, 
+                    explanation: "Lembaga legislatif di Indonesia adalah MPR, DPR, dan DPD."
+                },
+                { 
+                    question: 'Undang-Undang Dasar 1945 disahkan pada tanggal...', 
+                    options: ['17 Agustus 1945', '18 Agustus 1945', '19 Agustus 1945', '20 Agustus 1945'], 
+                    correct: 1, 
+                    explanation: "UUD 1945 disahkan pada 18 Agustus 1945 bersamaan dengan pengesahan Pancasila."
+                },
+                { 
+                    question: 'Lembaga yang berhak menguji undang-undang adalah...', 
+                    options: ['Mahkamah Agung', 'Dewan Perwakilan Rakyat', 'Komisi Yudisial', 'Mahkamah Konstitusi'], 
+                    correct: 3, 
+                    explanation: "Mahkamah Konstitusi berhak menguji undang-undang terhadap UUD 1945."
+                },
+                { 
+                    question: 'Lembaga yang bertugas mengawasi pelaksanaan undang-undang adalah...', 
+                    options: ['Mahkamah Agung', 'DPR', 'Presiden', 'MPR'], 
+                    correct: 0, 
+                    explanation: "Mahkamah Agung bertugas mengawasi pelaksanaan undang-undang melalui peradilan."
+                },
+                { 
+                    question: 'Amandemen UUD 1945 pertama kali mengubah pasal...', 
+                    options: ['Pasal 1, 2, 3', 'Pasal 5, 11, 13', 'Pasal 5, 7, 9, 13, 14, 15, 17, 20, 21', 'Pasal 27, 28, 29'], 
+                    correct: 2, 
+                    explanation: "Amandemen pertama UUD 1945 (1999) mengubah Pasal 5, 7, 9, 13, 14, 15, 17, 20, dan 21."
+                },
+                { 
+                    question: 'Pasal 29 UUD 1945 mengatur tentang...', 
+                    options: ['Hak pendidikan', 'Kebebasan beragama', 'Hak asasi', 'Kewarganegaraan'], 
+                    correct: 1, 
+                    explanation: "Pasal 29 UUD 1945 mengatur tentang kebebasan beragama di Indonesia."
+                },
+                { 
+                    question: 'Peraturan perundang-undangan tertinggi di Indonesia adalah...', 
+                    options: ['UU', 'Peraturan Pemerintah', 'Peraturan Presiden', 'UUD 1945'], 
+                    correct: 3, 
+                    explanation: "UUD 1945 merupakan hukum dasar dan peraturan perundang-undangan tertinggi di Indonesia."
+                },
+                { 
+                    question: 'Tujuan dari amandemen UUD 1945 adalah...', 
+                    options: ['Menyempurnakan UUD 1945', 'Mengganti UUD 1945', 'Menghapus UUD 1945', 'Menambahkan UUD 1945'], 
+                    correct: 0, 
+                    explanation: "Tujuan amandemen adalah menyempurnakan UUD 1945 agar lebih demokratis dan sesuai kebutuhan bangsa."
+                },
+                { 
+                    question: 'Pasal 27 ayat 1 UUD 1945 mengatur tentang...', 
+                    options: ['Hak untuk hidup', 'Hak untuk beragama', 'Persamaan kedudukan di mata hukum', 'Hak pendidikan'], 
+                    correct: 2, 
+                    explanation: "Pasal 27 ayat 1 menyatakan bahwa setiap warga negara memiliki persamaan kedudukan di dalam hukum."
+                },
+                { 
+                    question: 'Pasal 31 UUD 1945 mengatur tentang...', 
+                    options: ['Kesehatan', 'Hak asasi', 'Kewarganegaraan', 'Pendidikan'], 
+                    correct: 3, 
+                    explanation: "Pasal 31 mengatur tentang hak dan kewajiban warga negara dalam bidang pendidikan."
+                },
+                { 
+                    question: 'Lembaga yang mengesahkan undang-undang adalah...', 
+                    options: ['DPR', 'MPR', 'Presiden', 'Mahkamah Konstitusi'], 
+                    correct: 0, 
+                    explanation: "DPR berwenang mengesahkan rancangan undang-undang bersama Presiden."
+                },
+                { 
+                    question: "Pasal berapa yang mengatur tentang HAM dalam UUD 1945?", 
+                    options: ["Pasal 27-34", "Pasal 28A-28J", "Pasal 30-37", "Pasal 25-32"], 
+                    correct: 1, 
+                    explanation: "Hak Asasi Manusia diatur dalam Pasal 28A sampai dengan Pasal 28J UUD 1945."
                 }
             ],
             demokrasi: [
-                {
-                    question: "Demokrasi berasal dari kata Yunani 'demos' yang berarti?",
-                    options: ["Rakyat", "Pemerintah", "Kekuasaan", "Negara"],
-                    correct: 0,
+                { 
+                    question: "Demokrasi berasal dari kata Yunani 'demos' yang berarti?", 
+                    options: ["Rakyat", "Pemerintah", "Kekuasaan", "Negara"], 
+                    correct: 0, 
                     explanation: "Demos berarti rakyat, dan kratos berarti kekuasaan, jadi demokrasi adalah kekuasaan rakyat."
                 },
-                {
-                    question: "Sistem demokrasi di Indonesia disebut?",
-                    options: ["Demokrasi Liberal", "Demokrasi Pancasila", "Demokrasi Sosialis", "Demokrasi Terpimpin"],
-                    correct: 1,
+                { 
+                    question: "Sistem demokrasi di Indonesia disebut?", 
+                    options: ["Demokrasi Liberal", "Demokrasi Pancasila", "Demokrasi Sosialis", "Demokrasi Terpimpin"], 
+                    correct: 1, 
                     explanation: "Indonesia menganut sistem Demokrasi Pancasila yang berdasarkan nilai-nilai Pancasila."
                 },
-                {
-                    question: "Pemilu di Indonesia dilaksanakan setiap berapa tahun?",
-                    options: ["4 tahun", "5 tahun", "6 tahun", "7 tahun"],
-                    correct: 1,
+                { 
+                    question: 'Demokrasi Pancasila adalah demokrasi yang didasarkan pada...', 
+                    options: ['Nilai-nilai Pancasila', 'Nilai-nilai barat', 'Nilai-nilai liberalisme', 'Nilai-nilai kapitalisme'], 
+                    correct: 0, 
+                    explanation: "Demokrasi Pancasila adalah demokrasi yang berlandaskan nilai-nilai Pancasila sebagai dasar negara."
+                },
+                { 
+                    question: 'Ciri-ciri sistem demokrasi di Indonesia adalah...', 
+                    options: ['Satu partai politik', 'Kekuasaan absolut', 'Tidak ada oposisi', 'Adanya pemilu'], 
+                    correct: 3, 
+                    explanation: "Ciri utama demokrasi Indonesia adalah adanya pemilu yang dilaksanakan secara berkala dan langsung."
+                },
+                { 
+                    question: 'Peran media massa dalam sistem demokrasi adalah...', 
+                    options: ['Penyebar berita palsu', 'Kontrol sosial', 'Alat propaganda', 'Sumber konflik'], 
+                    correct: 1, 
+                    explanation: "Media massa berfungsi sebagai kontrol sosial dalam sistem demokrasi."
+                },
+                { 
+                    question: 'Hak mengeluarkan pendapat diatur dalam UUD 1945 pasal...', 
+                    options: ['Pasal 27', 'Pasal 28E', 'Pasal 30', 'Pasal 31'], 
+                    correct: 1, 
+                    explanation: "Pasal 28E UUD 1945 menjamin kebebasan mengeluarkan pendapat bagi warga negara."
+                },
+                { 
+                    question: 'Sistem pemerintahan yang dianut Indonesia setelah reformasi adalah...', 
+                    options: ['Demokrasi', 'Otokrasi', 'Komunisme', 'Monarki'], 
+                    correct: 0, 
+                    explanation: "Setelah reformasi, Indonesia menegaskan dirinya sebagai negara demokrasi."
+                },
+                { 
+                    question: 'Pengertian demokrasi secara etimologis adalah...', 
+                    options: ['Kekuasaan di tangan raja', 'Kekuasaan di tangan dewan', 'Kekuasaan di tangan rakyat', 'Kekuasaan di tangan negara'], 
+                    correct: 2, 
+                    explanation: "Secara etimologis, demokrasi berarti kekuasaan di tangan rakyat."
+                },
+                { 
+                    question: 'Sistem pemerintahan Indonesia adalah...', 
+                    options: ['Parlementer', 'Monarki', 'Presidensial', 'Otokrasi'], 
+                    correct: 2, 
+                    explanation: "Indonesia menganut sistem pemerintahan presidensial, di mana Presiden sebagai kepala negara dan kepala pemerintahan."
+                },
+                { 
+                    question: 'Hak warga negara untuk memilih dan dipilih dalam pemilu disebut...', 
+                    options: ['Hak asasi', 'Hak politik', 'Hak sosial', 'Hak ekonomi'], 
+                    correct: 1, 
+                    explanation: "Hak politik adalah hak warga negara untuk memilih dan dipilih dalam pemilu."
+                },
+                { 
+                    question: 'Pemilu pertama kali diselenggarakan di Indonesia pada tahun...', 
+                    options: ['1955', '1945', '1950', '1960'], 
+                    correct: 0, 
+                    explanation: "Pemilu pertama di Indonesia diselenggarakan pada tahun 1955."
+                },
+                { 
+                    question: 'Bentuk kedaulatan yang dianut Indonesia adalah...', 
+                    options: ['Kedaulatan raja', 'Kedaulatan negara', 'Kedaulatan rakyat', 'Kedaulatan tuhan'], 
+                    correct: 2, 
+                    explanation: "Indonesia menganut kedaulatan rakyat yang diwujudkan melalui pemilu dan perwakilan rakyat."
+                },
+                { 
+                    question: 'Prinsip trias politica membagi kekuasaan menjadi...', 
+                    options: ['Presiden, DPR, MPR', 'Pemerintah Pusat, Provinsi, Kabupaten', 'Raja, Rakyat, Tentara', 'Eksekutif, Legislatif, Yudikatif'], 
+                    correct: 3, 
+                    explanation: "Trias politica membagi kekuasaan menjadi eksekutif, legislatif, dan yudikatif."
+                },
+                { 
+                    question: 'Contoh perilaku demokratis di sekolah adalah...', 
+                    options: ['Musyawarah memilih ketua kelas', 'Memilih teman yang paling kaya', 'Mengajak teman membolos', 'Menyontek saat ujian'], 
+                    correct: 0, 
+                    explanation: "Musyawarah memilih ketua kelas merupakan contoh penerapan demokrasi di sekolah."
+                },
+                { 
+                    question: 'Lembaga yang bertugas mengawasi pelaksanaan pemilu adalah...', 
+                    options: ['KPU', 'Mahkamah Konstitusi', 'Bawaslu', 'DPR'], 
+                    correct: 2, 
+                    explanation: "Bawaslu bertugas mengawasi jalannya pemilu agar berlangsung jujur dan adil."
+                },
+                { 
+                    question: 'Pemilihan umum di Indonesia diselenggarakan setiap...', 
+                    options: ['4 tahun', '5 tahun', '6 tahun', '3 tahun'], 
+                    correct: 1, 
+                    explanation: "Pemilu di Indonesia diselenggarakan setiap 5 tahun sekali."
+                },
+                { 
+                    question: 'Asas demokrasi Pancasila adalah...', 
+                    options: ['Musyawarah mufakat', 'Voting', 'Aklamasi', 'Monarki'], 
+                    correct: 0, 
+                    explanation: "Asas utama demokrasi Pancasila adalah musyawarah untuk mencapai mufakat."
+                },
+                { 
+                    question: 'Hak untuk memilih dan dipilih adalah hak yang dijamin oleh...', 
+                    options: ['Pancasila', 'UU No. 12 Tahun 2003', 'Konstitusi', 'UU No. 39 Tahun 1999'], 
+                    correct: 2, 
+                    explanation: "Hak memilih dan dipilih dijamin oleh konstitusi (UUD 1945)."
+                },
+                { 
+                    question: 'Dalam negara demokrasi, kekuasaan tertinggi ada di tangan...', 
+                    options: ['Presiden', 'Parlemen', 'Raja', 'Rakyat'], 
+                    correct: 3, 
+                    explanation: "Dalam demokrasi, kekuasaan tertinggi berada di tangan rakyat."
+                },
+                { 
+                    question: 'Hak untuk berserikat dan berkumpul adalah hak...', 
+                    options: ['Ekonomi', 'Sosial', 'Budaya', 'Politik'], 
+                    correct: 3, 
+                    explanation: "Hak berserikat dan berkumpul termasuk hak politik warga negara."
+                },
+                { 
+                    question: 'Pemilihan kepala daerah disebut...', 
+                    options: ['Pilkada', 'Pemilu', 'Pilpres', 'Pilgub'], 
+                    correct: 0, 
+                    explanation: "Pemilihan kepala daerah disebut Pilkada."
+                },
+                { 
+                    question: 'Lembaga yang mengesahkan undang-undang adalah...', 
+                    options: ['MPR', 'DPR bersama Presiden', 'Mahkamah Konstitusi', 'Mahkamah Agung'], 
+                    correct: 1, 
+                    explanation: "Undang-undang disahkan oleh DPR bersama Presiden."
+                },
+                { 
+                    question: 'Penerapan demokrasi di lingkungan sekolah adalah...', 
+                    options: ['Pemilihan ketua kelas', 'Menyontek saat ujian', 'Menghina teman', 'Tidak menghormati guru'], 
+                    correct: 0, 
+                    explanation: "Pemilihan ketua kelas adalah contoh penerapan demokrasi di sekolah."
+                },
+                { 
+                    question: 'Prinsip musyawarah mufakat adalah ciri dari demokrasi...', 
+                    options: ['Liberal', 'Pancasila', 'Komunis', 'Totalitarian'], 
+                    correct: 1, 
+                    explanation: "Prinsip musyawarah mufakat adalah ciri khas demokrasi Pancasila."
+                },
+                { 
+                    question: 'Partisipasi warga negara dalam pemilu merupakan wujud dari...', 
+                    options: ['Kedaulatan raja', 'Kedaulatan negara', 'Kedaulatan rakyat', 'Kedaulatan hukum'], 
+                    correct: 2, 
+                    explanation: "Ikut serta dalam pemilu merupakan wujud nyata dari kedaulatan rakyat."
+                },
+                { 
+                    question: 'Hak untuk memilih dan dipilih dalam pemilu disebut...', 
+                    options: ['Hak politik', 'Hak ekonomi', 'Hak sosial', 'Hak budaya'], 
+                    correct: 0, 
+                    explanation: "Hak memilih dan dipilih adalah hak politik."
+                },
+                { 
+                    question: "Pemilu di Indonesia dilaksanakan setiap berapa tahun?", 
+                    options: ["4 tahun", "5 tahun", "6 tahun", "7 tahun"], 
+                    correct: 1, 
                     explanation: "Pemilu di Indonesia dilaksanakan setiap 5 tahun sekali."
                 }
             ],
             nkri: [
-                {
-                    question: "NKRI adalah singkatan dari?",
-                    options: ["Negara Kesatuan Republik Indonesia", "Negara Kebangsaan Republik Indonesia", "Negara Konstitusi Republik Indonesia", "Negara Kedaulatan Republik Indonesia"],
-                    correct: 0,
+                { 
+                    question: "NKRI adalah singkatan dari?", 
+                    options: ["Negara Kesatuan Republik Indonesia", "Negara Kebangsaan Republik Indonesia", "Negara Konstitusi Republik Indonesia", "Negara Kedaulatan Republik Indonesia"], 
+                    correct: 0, 
                     explanation: "NKRI adalah Negara Kesatuan Republik Indonesia."
                 },
-                {
-                    question: "Bentuk negara Indonesia adalah?",
-                    options: ["Federasi", "Kesatuan", "Konfederasi", "Serikat"],
-                    correct: 1,
+                { 
+                    question: "Bentuk negara Indonesia adalah?", 
+                    options: ["Federasi", "Kesatuan", "Konfederasi", "Serikat"], 
+                    correct: 1, 
                     explanation: "Indonesia berbentuk negara kesatuan dengan sistem desentralisasi."
                 },
-                {
-                    question: "Sistem pemerintahan Indonesia adalah?",
-                    options: ["Parlementer", "Presidensial", "Monarki", "Federal"],
-                    correct: 1,
+                { 
+                    question: 'Bahasa resmi negara Indonesia adalah...', 
+                    options: ['Bahasa Indonesia', 'Bahasa Jawa', 'Bahasa Inggris', 'Bahasa Melayu'], 
+                    correct: 0, 
+                    explanation: "Bahasa resmi negara Indonesia adalah Bahasa Indonesia."
+                },
+                { 
+                    question: 'Tugu Monas terletak di...', 
+                    options: ['Surabaya', 'Jakarta', 'Bandung', 'Yogyakarta'], 
+                    correct: 1, 
+                    explanation: "Monumen Nasional (Monas) terletak di Jakarta sebagai simbol perjuangan rakyat Indonesia."
+                },
+                { 
+                    question: 'Pulau yang dijuluki "Pulau Seribu Pura" adalah...', 
+                    options: ['Jawa', 'Sumatera', 'Kalimantan', 'Bali'], 
+                    correct: 3, 
+                    explanation: "Bali disebut Pulau Seribu Pura karena banyaknya pura sebagai tempat ibadah umat Hindu."
+                },
+                { 
+                    question: 'Slogan "Bhinneka Tunggal Ika" pertama kali diusulkan oleh...', 
+                    options: ['Mohammad Yamin', 'Mohammad Hatta', 'Soekarno', 'Sutan Syahrir'], 
+                    correct: 0, 
+                    explanation: "Mohammad Yamin mengusulkan semboyan Bhinneka Tunggal Ika sebagai semboyan bangsa."
+                },
+                { 
+                    question: 'Tanggal 17 Agustus 1945 diperingati sebagai...', 
+                    options: ['Hari Sumpah Pemuda', 'Hari Pahlawan', 'Hari Pendidikan Nasional', 'Hari Kemerdekaan'], 
+                    correct: 3, 
+                    explanation: "Tanggal 17 Agustus 1945 adalah Hari Kemerdekaan Republik Indonesia."
+                },
+                { 
+                    question: 'Semboyan "Gotong Royong" adalah nilai yang terkandung dalam Pancasila sila ke...', 
+                    options: ['Kelima', 'Ketiga', 'Keempat', 'Kesatu'], 
+                    correct: 1, 
+                    explanation: "Gotong royong mencerminkan sila ketiga Pancasila: Persatuan Indonesia."
+                },
+                { 
+                    question: 'Hari Pahlawan Nasional diperingati setiap tanggal...', 
+                    options: ['10 November', '17 Agustus', '2 Mei', '28 Oktober'], 
+                    correct: 0, 
+                    explanation: "Hari Pahlawan diperingati setiap 10 November untuk mengenang Pertempuran Surabaya."
+                },
+                { 
+                    question: 'Jumlah provinsi di Indonesia saat ini adalah...', 
+                    options: ['34', '33', '38', '35'], 
+                    correct: 2, 
+                    explanation: "Jumlah provinsi di Indonesia saat ini adalah 38 (update terbaru tahun 2022–2023)."
+                },
+                { 
+                    question: 'Hari Kemerdekaan Indonesia adalah tanggal...', 
+                    options: ['1 Juni 1945', '17 Agustus 1945', '28 Oktober 1928', '10 November 1945'], 
+                    correct: 1, 
+                    explanation: "Hari Kemerdekaan Indonesia jatuh pada tanggal 17 Agustus 1945."
+                },
+                { 
+                    question: 'Pakaian adat yang berasal dari Jawa Tengah adalah...', 
+                    options: ['Ulos', 'Baju Bodo', 'Baju Koto Gadang', 'Kebaya'], 
+                    correct: 3, 
+                    explanation: "Kebaya adalah salah satu pakaian adat khas Jawa Tengah."
+                },
+                { 
+                    question: 'Lambang negara Indonesia adalah...', 
+                    options: ['Bhinneka Tunggal Ika', 'Pancasila', 'Garuda Pancasila', 'UUD 1945'], 
+                    correct: 2, 
+                    explanation: "Lambang negara Indonesia adalah Garuda Pancasila."
+                },
+                { 
+                    question: 'Semboyan "Dari Sabang Sampai Merauke" menggambarkan...', 
+                    options: ['Wilayah Indonesia yang luas', 'Perjuangan rakyat', 'Persatuan dan kesatuan', 'Keberagaman budaya'], 
+                    correct: 0, 
+                    explanation: "Semboyan ini menggambarkan luasnya wilayah Indonesia dari barat hingga timur."
+                },
+                { 
+                    question: 'Wilayah laut Indonesia diukur dari garis pantai sejauh...', 
+                    options: ['200 mil laut', '12 mil laut', '24 mil laut', '100 mil laut'], 
+                    correct: 1, 
+                    explanation: "Wilayah laut Indonesia diukur sejauh 12 mil laut dari garis pantai."
+                },
+                { 
+                    question: 'Pulau terbesar di Indonesia adalah...', 
+                    options: ['Sumatera', 'Jawa', 'Sulawesi', 'Kalimantan'], 
+                    correct: 3, 
+                    explanation: "Kalimantan adalah pulau terbesar di Indonesia."
+                },
+                { 
+                    question: 'Secara geografis, Indonesia terletak di antara dua benua yaitu...', 
+                    options: ['Asia dan Afrika', 'Asia dan Eropa', 'Australia dan Eropa', 'Asia dan Australia'], 
+                    correct: 3, 
+                    explanation: "Indonesia terletak di antara Benua Asia dan Australia."
+                },
+                { 
+                    question: 'Tujuan dibentuknya NKRI terdapat dalam pembukaan UUD 1945 alinea...', 
+                    options: ['Keempat', 'Kesatu', 'Kedua', 'Ketiga'], 
+                    correct: 0, 
+                    explanation: "Tujuan NKRI termuat dalam Pembukaan UUD 1945 alinea keempat."
+                },
+                { 
+                    question: 'Landasan hukum berdirinya NKRI adalah...', 
+                    options: ['Pancasila', 'UUD 1945', 'Deklarasi Djuanda', 'Proklamasi Kemerdekaan'], 
+                    correct: 1, 
+                    explanation: "Landasan hukum berdirinya NKRI adalah UUD 1945."
+                },
+                { 
+                    question: 'Ibu kota negara Indonesia adalah...', 
+                    options: ['Surabaya', 'Bandung', 'Jakarta', 'Yogyakarta'], 
+                    correct: 2, 
+                    explanation: "Saat ini ibu kota negara Indonesia adalah Jakarta (proses pemindahan ke IKN sedang berlangsung)."
+                },
+                { 
+                    question: 'Lambang negara Indonesia adalah...', 
+                    options: ['Burung Elang', 'Banteng', 'Burung Merpati', 'Garuda Pancasila'], 
+                    correct: 3, 
+                    explanation: "Lambang negara Indonesia adalah Garuda Pancasila."
+                },
+                { 
+                    question: 'Lagu kebangsaan Indonesia adalah...', 
+                    options: ['Indonesia Raya', 'Garuda Pancasila', 'Dari Sabang Sampai Merauke', 'Bagimu Negeri'], 
+                    correct: 0, 
+                    explanation: "Lagu kebangsaan Indonesia adalah Indonesia Raya ciptaan Wage Rudolf Supratman."
+                },
+                { 
+                    question: 'Secara astronomis, Indonesia terletak di antara...', 
+                    options: ['5° LU - 10° LS dan 90° BT - 130° BT', '6° LU - 11° LS dan 95° BT - 141° BT', '6° LU - 10° LS dan 95° BT - 141° BT', '6° LU - 11° LS dan 90° BT - 141° BT'], 
+                    correct: 1, 
+                    explanation: "Secara astronomis, Indonesia berada di 6° LU - 11° LS dan 95° BT - 141° BT."
+                },
+                { 
+                    question: 'Semboyan nasional Indonesia adalah...', 
+                    options: ['Gotong Royong', 'Tut Wuri Handayani', 'Bhinneka Tunggal Ika', 'Wira Wibawa Sakti'], 
+                    correct: 2, 
+                    explanation: "Semboyan nasional Indonesia adalah Bhinneka Tunggal Ika."
+                },
+                { 
+                    question: 'Makna persatuan dan kesatuan bagi bangsa Indonesia adalah...', 
+                    options: ['Mencari kekayaan alam', 'Menjaga keutuhan negara', 'Menjadi negara adikuasa', 'Menghadapi musuh dari luar'], 
+                    correct: 1, 
+                    explanation: "Makna persatuan dan kesatuan adalah menjaga keutuhan negara dari perpecahan."
+                },
+                { 
+                    question: 'Perjanjian Renville, Linggarjati, dan Roem-Royen adalah contoh...', 
+                    options: ['Perjuangan diplomasi', 'Perjuangan militer', 'Perjuangan ekonomi', 'Perjuangan politik'], 
+                    correct: 0, 
+                    explanation: "Perjanjian Renville, Linggarjati, dan Roem-Royen adalah bentuk perjuangan diplomasi Indonesia."
+                },
+                { 
+                    question: "Sistem pemerintahan Indonesia adalah?", 
+                    options: ["Parlementer", "Presidensial", "Monarki", "Federal"], 
+                    correct: 1, 
                     explanation: "Indonesia menganut sistem pemerintahan presidensial."
                 }
             ],
             bhinneka: [
-                {
-                    question: "Bhinneka Tunggal Ika berasal dari bahasa?",
-                    options: ["Sansekerta", "Jawa Kuno", "Latin", "Arab"],
-                    correct: 1,
+                { 
+                    question: "Bhinneka Tunggal Ika berasal dari bahasa?", 
+                    options: ["Sansekerta", "Jawa Kuno", "Latin", "Arab"], 
+                    correct: 1, 
                     explanation: "Bhinneka Tunggal Ika berasal dari bahasa Jawa Kuno yang artinya berbeda-beda tetapi tetap satu."
                 },
-                {
-                    question: "Bhinneka Tunggal Ika terdapat dalam kitab?",
-                    options: ["Sutasoma", "Arjunawiwaha", "Bharatayuddha", "Ramayana"],
-                    correct: 0,
-                    explanation: "Bhinneka Tunggal Ika terdapat dalam kitab Sutasoma karya Mpu Tantular."
+                { 
+                    question: "Bhinneka Tunggal Ika terdapat dalam kitab?", 
+                    options: ["Sutasoma", "Arjunawiwaha", "Bharatayuddha", "Ramayana"], 
+                    correct: 0, 
+                    explanation: "Semboyan Bhinneka Tunggal Ika terdapat dalam kitab Sutasoma karya Mpu Tantular."
                 },
-                {
-                    question: "Arti dari Bhinneka Tunggal Ika adalah?",
-                    options: ["Satu untuk semua", "Berbeda-beda tetapi tetap satu", "Bersatu kita teguh", "Gotong royong"],
-                    correct: 1,
+                { 
+                    question: 'Toleransi antar umat beragama adalah contoh pengamalan...', 
+                    options: ['Pancasila', 'Bhinneka Tunggal Ika', 'UUD 1945', 'Sumpah Pemuda'], 
+                    correct: 1, 
+                    explanation: "Toleransi antar umat beragama mencerminkan semangat Bhinneka Tunggal Ika dalam menjaga persatuan."
+                },
+                { 
+                    question: 'Semboyan Bhinneka Tunggal Ika terdapat dalam kitab...', 
+                    options: ['Negarakertagama', 'Pararaton', 'Arjuna Wiwaha', 'Sutasoma'], 
+                    correct: 3, 
+                    explanation: "Semboyan ini berasal dari kitab Sutasoma karya Mpu Tantular pada abad ke-14."
+                },
+                { 
+                    question: 'Arti kata "Bhinneka" adalah...', 
+                    options: ['Beraneka ragam', 'Satu kesatuan', 'Berbeda', 'Sama'], 
+                    correct: 0, 
+                    explanation: "Bhinneka berarti beraneka ragam atau berbeda-beda."
+                },
+                { 
+                    question: 'Perbedaan ras dan etnis di Indonesia tidak boleh menjadi sebab...', 
+                    options: ['Perpecahan', 'Kerukunan', 'Toleransi', 'Persatuan'], 
+                    correct: 0, 
+                    explanation: "Perbedaan ras dan etnis tidak boleh menjadi sebab perpecahan, melainkan harus memperkuat persatuan."
+                },
+                { 
+                    question: 'Tujuan dari Bhinneka Tunggal Ika adalah...', 
+                    options: ['Menciptakan perpecahan', 'Membedakan suku dan budaya', 'Menjaga persatuan dan kesatuan bangsa', 'Menghilangkan perbedaan'], 
+                    correct: 2, 
+                    explanation: "Tujuannya adalah menjaga persatuan dan kesatuan bangsa Indonesia di tengah perbedaan."
+                },
+                { 
+                    question: 'Menghormati perbedaan pendapat saat musyawarah adalah contoh sikap...', 
+                    options: ['Individualisme', 'Egoisme', 'Toleransi', 'Diskriminasi'], 
+                    correct: 2, 
+                    explanation: "Menghormati perbedaan pendapat adalah contoh sikap toleransi dalam kehidupan sehari-hari."
+                },
+                { 
+                    question: 'Manfaat adanya keragaman budaya di Indonesia adalah...', 
+                    options: ['Sebagai alat pemecah belah', 'Sebagai kekayaan bangsa', 'Sebagai sumber konflik', 'Sebagai penghalang persatuan'], 
+                    correct: 1, 
+                    explanation: "Keragaman budaya merupakan kekayaan bangsa yang harus dijaga dan dilestarikan."
+                },
+                { 
+                    question: 'Dasar hukum Bhinneka Tunggal Ika terdapat dalam...', 
+                    options: ['UUD 1945 pasal 36A', 'Pancasila Sila Ke-3', 'UUD 1945 pasal 27', 'UUD 1945 pasal 28'], 
+                    correct: 0, 
+                    explanation: "Dasar hukum semboyan Bhinneka Tunggal Ika terdapat dalam UUD 1945 Pasal 36A."
+                },
+                { 
+                    question: 'Semboyan Bhinneka Tunggal Ika artinya...', 
+                    options: ['Satu Nusa Satu Bangsa', 'Indonesia Jaya', 'Merdeka Selamanya', 'Berbeda-beda tetapi tetap satu jua'], 
+                    correct: 3, 
+                    explanation: "Artinya adalah 'Berbeda-beda tetapi tetap satu jua'."
+                },
+                { 
+                    question: 'Keragaman suku dan budaya di Indonesia merupakan kekayaan...', 
+                    options: ['bangsa', 'pribadi', 'kelompok', 'ras'], 
+                    correct: 0, 
+                    explanation: "Keragaman tersebut adalah kekayaan bangsa Indonesia yang harus dijaga."
+                },
+                { 
+                    question: 'Istilah "Satu Bangsa, Satu Tanah Air, Satu Bahasa" terdapat dalam...', 
+                    options: ['Proklamasi Kemerdekaan', 'Pancasila', 'Sumpah Pemuda', 'UUD 1945'], 
+                    correct: 2, 
+                    explanation: "Semboyan tersebut terdapat dalam Sumpah Pemuda tahun 1928."
+                },
+                { 
+                    question: 'Keragaman agama di Indonesia diakomodasi oleh Sila...', 
+                    options: ['Ketuhanan Yang Maha Esa', 'Kemanusiaan yang Adil dan Beradab', 'Persatuan Indonesia', 'Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan'], 
+                    correct: 0, 
+                    explanation: "Keragaman agama diakomodasi oleh sila pertama Pancasila yaitu 'Ketuhanan Yang Maha Esa'."
+                },
+                { 
+                    question: 'Upacara adat yang berasal dari Bali adalah...', 
+                    options: ['Grebeg', 'Sekaten', 'Ngaben', 'Reog Ponorogo'], 
+                    correct: 2, 
+                    explanation: "Ngaben adalah upacara adat pembakaran jenazah yang berasal dari Bali."
+                },
+                { 
+                    question: 'Keragaman seni dan budaya di Indonesia mencerminkan...', 
+                    options: ['Jati diri bangsa', 'Budaya asing', 'Keterbelakangan', 'Kemiskinan'], 
+                    correct: 0, 
+                    explanation: "Keragaman budaya mencerminkan jati diri bangsa Indonesia."
+                },
+                { 
+                    question: 'Keragaman di Indonesia merupakan rahmat dari...', 
+                    options: ['Tuhan', 'Pemerintah', 'Rakyat', 'Pahlawan'], 
+                    correct: 0, 
+                    explanation: "Keragaman bangsa Indonesia merupakan rahmat dari Tuhan Yang Maha Esa."
+                },
+                { 
+                    question: 'Keragaman suku dan budaya di Indonesia mencerminkan...', 
+                    options: ['Kelemahan bangsa', 'Kemiskinan bangsa', 'Keterbelakangan bangsa', 'Kekayaan bangsa'], 
+                    correct: 3, 
+                    explanation: "Keragaman suku dan budaya mencerminkan kekayaan bangsa Indonesia."
+                },
+                { 
+                    question: 'Rumah adat yang berasal dari Sumatera Utara adalah...', 
+                    options: ['Rumah Bolon', 'Rumah Gadang', 'Rumah Joglo', 'Rumah Honai'], 
+                    correct: 0, 
+                    explanation: "Rumah adat dari Sumatera Utara adalah Rumah Bolon."
+                },
+                { 
+                    question: 'Lagu daerah "Yamko Rambe Yamko" berasal dari...', 
+                    options: ['Maluku', 'Papua', 'Sulawesi', 'Kalimantan'], 
+                    correct: 1, 
+                    explanation: "Lagu daerah 'Yamko Rambe Yamko' berasal dari Papua."
+                },
+                { 
+                    question: 'Tradisi "Sisingaan" berasal dari...', 
+                    options: ['Jawa Tengah', 'Sumatera Barat', 'Bali', 'Jawa Barat'], 
+                    correct: 3, 
+                    explanation: "Tradisi Sisingaan berasal dari Jawa Barat."
+                },
+                { 
+                    question: 'Lagu daerah "Gundul-Gundul Pacul" berasal dari...', 
+                    options: ['Jawa Tengah', 'Jawa Barat', 'Jawa Timur', 'Bali'], 
+                    correct: 0, 
+                    explanation: "Lagu 'Gundul-Gundul Pacul' berasal dari Jawa Tengah."
+                },
+                { 
+                    question: 'Semboyan Bhinneka Tunggal Ika terdapat pada...', 
+                    options: ['Bendera negara', 'Lambang negara', 'Lagu kebangsaan', 'Dasar negara'], 
+                    correct: 1, 
+                    explanation: "Semboyan Bhinneka Tunggal Ika tercantum pada lambang negara Garuda Pancasila."
+                },
+                { 
+                    question: 'Contoh toleransi dalam kehidupan sehari-hari adalah...', 
+                    options: ['Memaksakan kehendak', 'Mengolok-olok teman', 'Menghargai perbedaan pendapat', 'Saling bermusuhan'], 
+                    correct: 2, 
+                    explanation: "Menghargai perbedaan pendapat adalah contoh sikap toleransi sehari-hari."
+                },
+                { 
+                    question: 'Lagu daerah "Apuse" berasal dari...', 
+                    options: ['Maluku', 'Sulawesi', 'Papua', 'Kalimantan'], 
+                    correct: 2, 
+                    explanation: "Lagu daerah 'Apuse' berasal dari Papua."
+                },
+                { 
+                    question: "Arti dari Bhinneka Tunggal Ika adalah?", 
+                    options: ["Satu untuk semua", "Berbeda-beda tetapi tetap satu", "Bersatu kita teguh", "Gotong royong"], 
+                    correct: 1, 
                     explanation: "Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu jua."
                 }
             ],
             ham: [
-                {
-                    question: "HAM adalah singkatan dari?",
-                    options: ["Hak Asasi Manusia", "Hak Azasi Manusia", "Hak Asas Manusia", "Hak Asal Manusia"],
-                    correct: 0,
+                { 
+                    question: "HAM adalah singkatan dari?", 
+                    options: ["Hak Asasi Manusia", "Hak Azasi Manusia", "Hak Asas Manusia", "Hak Asal Manusia"], 
+                    correct: 0, 
                     explanation: "HAM adalah Hak Asasi Manusia, yaitu hak dasar yang dimiliki setiap manusia."
                 },
-                {
-                    question: "Komnas HAM dibentuk pada tahun?",
-                    options: ["1993", "1995", "1997", "1999"],
-                    correct: 0,
+                { 
+                    question: "Komnas HAM dibentuk pada tahun?",  
+                    options: ["1993", "1995", "1997", "1999"], 
+                    correct: 0, 
                     explanation: "Komnas HAM dibentuk pada tahun 1993 melalui Keppres No. 50 Tahun 1993."
                 },
-                {
-                    question: "Hak untuk hidup termasuk dalam kategori HAM?",
-                    options: ["Sipil dan Politik", "Ekonomi dan Sosial", "Budaya", "Lingkungan"],
-                    correct: 0,
+                { 
+                    question: 'Lembaga yang bertugas menangani pelanggaran HAM adalah...', 
+                    options: ['Komisi Yudisial', 'Mahkamah Agung', 'Mahkamah Konstitusi', 'Komnas HAM'], 
+                    correct: 3, 
+                    explanation: "Komnas HAM bertugas menangani, menyelidiki, dan memantau pelanggaran HAM di Indonesia."
+                },
+                { 
+                    question: 'Hak untuk mendapatkan pekerjaan yang layak adalah contoh hak...', 
+                    options: ['asasi pribadi', 'asasi ekonomi', 'asasi sosial', 'asasi politik'], 
+                    correct: 1, 
+                    explanation: "Hak mendapatkan pekerjaan yang layak termasuk hak asasi ekonomi."
+                },
+                { 
+                    question: 'Hak untuk berpendapat dan berorganisasi adalah contoh hak...', 
+                    options: ['asasi politik', 'asasi pribadi', 'asasi ekonomi', 'asasi sosial'], 
+                    correct: 0, 
+                    explanation: "Hak berpendapat dan berorganisasi merupakan bagian dari hak asasi politik."
+                },
+                { 
+                    question: 'UU yang mengatur tentang HAM di Indonesia adalah...', 
+                    options: ['UU No. 20 Tahun 2003', 'UU No. 12 Tahun 2011', 'UU No. 31 Tahun 1999', 'UU No. 39 Tahun 1999'], 
+                    correct: 3, 
+                    explanation: "UU No. 39 Tahun 1999 adalah dasar hukum yang mengatur tentang Hak Asasi Manusia di Indonesia."
+                },
+                { 
+                    question: 'Hak untuk memeluk agama dan beribadah menurut agama masing-masing adalah hak...', 
+                    options: ['Kebebasan berpendapat', 'Kebebasan beragama', 'Kebebasan berorganisasi', 'Kebebasan berekonomi'], 
+                    correct: 1, 
+                    explanation: "Kebebasan beragama adalah hak asasi fundamental setiap warga negara."
+                },
+                { 
+                    question: 'Pelanggaran HAM berat di Indonesia diadili oleh...', 
+                    options: ['Pengadilan Negeri', 'Mahkamah Agung', 'Pengadilan HAM Ad Hoc', 'Mahkamah Konstitusi'], 
+                    correct: 2, 
+                    explanation: "Pelanggaran HAM berat diadili oleh Pengadilan HAM Ad Hoc sesuai ketentuan undang-undang."
+                },
+                { 
+                    question: 'Contoh pelanggaran HAM ringan adalah...', 
+                    options: ['Pembunuhan', 'Genosida', 'Kejahatan terhadap kemanusiaan', 'Pencemaran nama baik'], 
+                    correct: 3, 
+                    explanation: "Pencemaran nama baik merupakan contoh pelanggaran HAM ringan."
+                },
+                { 
+                    question: 'Piagam HAM pertama di dunia adalah...', 
+                    options: ['Magna Charta', 'Bill of Rights', 'Universal Declaration of Human Rights', 'Covenant on Civil and Political Rights'], 
+                    correct: 0, 
+                    explanation: "Magna Charta (1215) dianggap sebagai piagam HAM pertama di dunia."
+                },
+                { 
+                    question: 'Organisasi internasional yang mengurusi hak asasi manusia adalah...', 
+                    options: ['Pengadilan HAM Ad Hoc', 'WHO', 'UNESCO', 'Amnesty International'], 
+                    correct: 3, 
+                    explanation: "Amnesty International adalah organisasi internasional yang fokus pada advokasi HAM."
+                },
+                { 
+                    question: 'Hak untuk hidup adalah contoh dari hak...', 
+                    options: ['asasi ekonomi', 'asasi sosial', 'asasi pribadi', 'asasi politik'], 
+                    correct: 2, 
+                    explanation: "Hak untuk hidup termasuk hak asasi pribadi yang melekat pada setiap manusia."
+                },
+                { 
+                    question: 'Hak atas kebebasan berekspresi dijamin dalam UUD 1945 pasal...', 
+                    options: ['Pasal 28F', 'Pasal 28A', 'Pasal 28B', 'Pasal 28C'], 
+                    correct: 0, 
+                    explanation: "Kebebasan berekspresi dijamin dalam UUD 1945 Pasal 28F."
+                },
+                { 
+                    question: 'Hak untuk hidup, bebas dari diskriminasi adalah hak yang...', 
+                    options: ['Dapat dikurangi', 'Bisa dicabut', 'Dapat dibatasi','Tidak dapat dikurangi'], 
+                    correct: 3, 
+                    explanation: "Hak untuk hidup dan bebas dari diskriminasi adalah hak yang tidak dapat dikurangi dalam keadaan apapun."
+                },
+                { 
+                    question: 'Komisi Kebenaran dan Rekonsiliasi (KKR) dibentuk untuk...', 
+                    options: ['Mengadili koruptor', 'Menyelesaikan pelanggaran HAM berat masa lalu', 'Mengurus masalah perdata', 'Membuat undang-undang'], 
+                    correct: 1, 
+                    explanation: "KKR dibentuk untuk menyelesaikan pelanggaran HAM berat di masa lalu melalui rekonsiliasi."
+                },
+                { 
+                    question: 'Lembaga yang bertugas menangani kasus korupsi adalah...', 
+                    options: ['KPK', 'Komnas HAM', 'Mahkamah Agung', 'Mahkamah Konstitusi'], 
+                    correct: 0, 
+                    explanation: "Komisi Pemberantasan Korupsi (KPK) bertugas menangani kasus korupsi di Indonesia."
+                },
+                { 
+                    question: 'Hak untuk mendapatkan perlindungan sosial adalah hak...', 
+                    options: ['Asasi pribadi', 'Asasi ekonomi', 'Asasi sosial dan budaya', 'Asasi politik'], 
+                    correct: 2, 
+                    explanation: "Hak untuk mendapatkan perlindungan sosial termasuk hak asasi sosial dan budaya."
+                },
+                { 
+                    question: 'Hak untuk memeluk agama dan beribadah adalah hak yang dijamin oleh...', 
+                    options: ['Pancasila', 'UU', 'Peraturan Pemerintah', 'UUD 1945'], 
+                    correct: 3, 
+                    explanation: "Kebebasan beragama dijamin dalam UUD 1945 Pasal 29."
+                },
+                { 
+                    question: 'Hak untuk memiliki properti adalah hak...', 
+                    options: ['Asasi ekonomi', 'Asasi pribadi', 'Asasi sosial', 'Asasi politik'], 
+                    correct: 0, 
+                    explanation: "Hak memiliki properti termasuk hak asasi ekonomi."
+                },
+                { 
+                    question: 'Deklarasi Universal HAM PBB disahkan pada tahun...', 
+                    options: ['1945', '1948', '1950', '1960'], 
+                    correct: 1, 
+                    explanation: "Deklarasi Universal Hak Asasi Manusia (UDHR) disahkan oleh PBB pada tahun 1948."
+                },
+                { 
+                    question: 'Lembaga yang bertugas melindungi hak-hak anak adalah...', 
+                    options: ['Komnas HAM', 'KPAI', 'KPK', 'DPR'], 
+                    correct: 1, 
+                    explanation: "Komisi Perlindungan Anak Indonesia (KPAI) melindungi hak-hak anak di Indonesia."
+                },
+                { 
+                    question: 'Hak untuk mendapatkan perlindungan dari kekerasan diatur dalam UUD 1945 pasal...', 
+                    options: ['Pasal 28A', 'Pasal 28B', 'Pasal 28C', 'Pasal 28G'], 
+                    correct: 3, 
+                    explanation: "Perlindungan dari kekerasan dijamin dalam UUD 1945 Pasal 28G."
+                },
+                { 
+                    question: "Hak untuk hidup termasuk dalam kategori HAM?", 
+                    options: ["Sipil dan Politik", "Ekonomi dan Sosial", "Budaya", "Lingkungan"], 
+                    correct: 0, 
                     explanation: "Hak untuk hidup termasuk dalam HAM sipil dan politik yang paling mendasar."
                 }
             ]
@@ -2679,4 +3519,5 @@
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970f7afcb1fcb5be',t:'MTc1NTQ5OTg2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
+
 
